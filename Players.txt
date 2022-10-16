@@ -1,0 +1,11 @@
+karrigan FaZe 143 65 0.85 2.2 A
+broky FaZe 113 76 0.50 1.48 D
+ropz FaZe 98 50 0.70 1.96 A B
+twistzz FaZe 89 92 0.72 0.96 B
+rain FaZe 97 99 0.48 0.97 B
+olofmeister FaZe 132 80 0.82 1.65 A
+interz Cloud9 102 65 0.74 1.56
+SH1RO Cloud9 84 88 0.78 0.95 B
+nafany Cloud9 72 94 0.42 0.76 C
+hobbit Cloud9 93 99 0.66 0.93 B
+Ax1Le Cloud9 108 69 0.46 1.56 A
