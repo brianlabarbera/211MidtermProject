@@ -1,6 +1,6 @@
 karrigan FaZe 143 65 0.85 2.2 A
 broky FaZe 113 76 0.50 1.48 D
-ropz FaZe 98 50 0.70 1.96 A B
+ropz FaZe 98 50 0.70 1.96 A
 twistzz FaZe 89 92 0.72 0.96 B
 rain FaZe 97 99 0.48 0.97 B
 olofmeister FaZe 132 80 0.82 1.65 A

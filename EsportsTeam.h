@@ -5,15 +5,17 @@
 #include <string>
 #include <fstream>
 #include <vector>
+using namespace std;
 
 class EsportsTeam {
 
 private:
-	vector<EsportsPlayer> players;
+	
 
 
 public:
 	EsportsTeam(string filePath);
+
 };
 
 #endif

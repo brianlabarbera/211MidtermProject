@@ -1,14 +1,14 @@
 #include "EsportsPlayer.h"
 using namespace std;
 
-EsportsPlayer::EsportsPlayer(string playerInformation) {
-	name = "NoName";
-	teamName = "NoTeam";
-	kills = 0;
-	deaths = 0;
-	headshotPercentage = 0.0;
-	killDeathRatio = 0.0;
-	rating = ' ';
+EsportsPlayer::EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating) {
+	this->name = name;
+	this->teamName = teamName;
+	this->kills = kills;
+	this->deaths = deaths;
+	this->headshotPercentage = headshotPercentage;
+	this->killDeathRatio = killDeathRatio;
+	this->rating = rating;
 }
 
 string EsportsPlayer::getName() {

@@ -2,20 +2,18 @@
 #define ESPORTSPLAYER_H
 #include <iostream>
 #include <string>
+using namespace std;
 
 class EsportsPlayer {
 
 private:
-	string name;
-	string teamName;
-	int kills;
-	int deaths;
-	double headshotPercentage;
-	double killDeathRatio;
+	string name, teamName;
+	int kills, deaths;
+	double headshotPercentage, killDeathRatio;
 	char rating;
 	
 public:
-	EsportsPlayer(string playerInformation);
+	EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating);
 	string getName();
 	string getTeamName();
 	int getKills();
