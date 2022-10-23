@@ -21,8 +21,7 @@ public:
 	double getHeadshotPercentage();
 	double getKillDeathRatio();
 	char getRating();
-
-
+	void printPlayer();
 };
 
 #endif

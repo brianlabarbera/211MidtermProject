@@ -1,4 +1,5 @@
 #include "EsportsPlayer.h"
+
 using namespace std;
 
 EsportsPlayer::EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating) {
@@ -37,4 +38,10 @@ double EsportsPlayer::getKillDeathRatio() {
 
 char EsportsPlayer::getRating() {
 	return rating;
+}
+
+void EsportsPlayer::printPlayer() {
+
+	cout << name << " " << teamName << " " << kills << " " << deaths << " " << headshotPercentage << " " << killDeathRatio << " " << rating << endl;
+
 }

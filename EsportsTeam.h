@@ -10,12 +10,11 @@ using namespace std;
 class EsportsTeam {
 
 private:
-	
-
+	vector<EsportsPlayer> Teams;
 
 public:
-	EsportsTeam(string filePath);
-
+	void addPlayer(EsportsPlayer playerteam);
+	void printTeam();
 };
 
 #endif

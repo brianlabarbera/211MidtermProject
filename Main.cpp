@@ -1,4 +1,3 @@
-#include <iostream>
 #include "EsportsTeam.h"
 #include "EsportsPlayer.h"
 using namespace std;
@@ -6,6 +5,8 @@ using namespace std;
 int main() {
 
 	vector<EsportsPlayer> players;
+	EsportsTeam FaZe;
+	EsportsTeam Cloud9;
 
 	ifstream playerFile("Players.txt");
 
@@ -24,7 +25,21 @@ int main() {
 
 	playerFile.close();
 
-	cout << players.at(2).getName();
+	for (int i = 0; i < players.size(); i++) {
+
+		if (players.at(i).getTeamName() == "FaZe") {
+
+			FaZe.addPlayer(players.at(i));
+			
+		}
+
+		else {
+			Cloud9.addPlayer(players.at(i));
+		}
+
+	}
+
+	FaZe.printTeam();
 
 	return 0;
 }
