@@ -18,3 +18,19 @@ void EsportsTeam::printTeam() {
 	}
 
 }
+
+void EsportsTeam::printTeamPlayers() {
+
+	for (int i = 0; i < Teams.size(); i++) {
+
+		cout << i + 1 << ". " << Teams.at(i).getName() << endl;
+	}
+
+}
+
+EsportsPlayer EsportsTeam::getSpecificPlayer(int userinput3) {
+
+	return Teams.at(userinput3 - 1);
+	
+
+}

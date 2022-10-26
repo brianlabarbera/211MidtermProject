@@ -22,6 +22,7 @@ public:
 	double getKillDeathRatio();
 	char getRating();
 	void printPlayer();
+	void updatePlayer();
 };
 
 #endif

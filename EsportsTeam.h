@@ -15,6 +15,8 @@ private:
 public:
 	void addPlayer(EsportsPlayer playerteam);
 	void printTeam();
+	void printTeamPlayers();
+	EsportsPlayer getSpecificPlayer(int userinput3);
 };
 
 #endif

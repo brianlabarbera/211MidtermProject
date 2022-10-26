@@ -45,3 +45,9 @@ void EsportsPlayer::printPlayer() {
 	cout << name << " " << teamName << " " << kills << " " << deaths << " " << headshotPercentage << " " << killDeathRatio << " " << rating << endl;
 
 }
+
+void EsportsPlayer::updatePlayer() {
+
+
+	
+}
