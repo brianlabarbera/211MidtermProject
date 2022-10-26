@@ -2,6 +2,7 @@
 #define ESPORTSPLAYER_H
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class EsportsPlayer {
@@ -23,6 +24,7 @@ public:
 	char getRating();
 	void printPlayer();
 	void updatePlayer();
+	void outputPlayer(ofstream& outputFile);
 };
 
 #endif

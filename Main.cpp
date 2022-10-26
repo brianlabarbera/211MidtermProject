@@ -3,14 +3,17 @@
 using namespace std;
 
 void viewPlayer(EsportsTeam team);
+void updatePlayer(EsportsTeam& team);
+void addPlayer(EsportsTeam& team);
 
 int main() {
 
 	vector<EsportsPlayer> players;
-	EsportsTeam FaZe;
-	EsportsTeam Cloud9;
+	EsportsTeam FaZe("FaZe");
+	EsportsTeam Cloud9("Cloud9");
 
 	ifstream playerFile("Players.txt");
+	ofstream outputFile("Newplayers.txt");
 
 	string tempName, tempTeamName;
 	int tempKills, tempDeaths, userinput;
@@ -93,8 +96,11 @@ int main() {
 			cout << "Which team?" << endl;
 			cout << "1. FaZe" << endl;
 			cout << "2. Cloud9" << endl;
+			
 			cout << endl;
+
 			cin >> userinput4;
+			
 			cout << endl;
 
 			if (userinput4 == 1) {
@@ -106,6 +112,56 @@ int main() {
 				Cloud9.printTeam();
 				cout << endl;
 			}
+
+			break;
+
+		case 4:
+			int userinput5;
+			cout << "Which team?" << endl;
+			cout << "1. FaZe" << endl;
+			cout << "2. Cloud9" << endl;
+
+			cout << endl;
+
+			cin >> userinput5;
+
+			cout << endl;
+
+			if (userinput5 == 1) {
+				updatePlayer(FaZe);
+			}
+
+			else if (userinput5 == 2) {
+				updatePlayer(Cloud9);
+			}
+
+			break;
+
+		case 5:
+			int userinput6;
+			cout << "Which team?" << endl;
+			cout << "1. FaZe" << endl;
+			cout << "2. Cloud9" << endl;
+
+			cout << endl;
+
+			cin >> userinput6;
+
+			cout << endl;
+
+			if (userinput6 == 1) {
+				addPlayer(FaZe);
+			}
+
+			else if (userinput6 == 2) {
+				addPlayer(Cloud9);
+			}
+
+			break;
+
+		case 6:
+			FaZe.outputTeam(outputFile);
+			Cloud9.outputTeam(outputFile);
 			
 		}
 
@@ -119,14 +175,35 @@ void viewPlayer(EsportsTeam team) {
 
 	int userinput3;
 
-	cout << "Choose the player:" << endl;
+	cout << "Which player?" << endl;
 	team.printTeamPlayers();
 
 	cout << endl;
 
 	cin >> userinput3;
 
-	team.getSpecificPlayer(userinput3);
+	team.getSpecificPlayer(userinput3).printPlayer();
 
 	cout << endl;
+}
+
+void updatePlayer(EsportsTeam& team) {
+
+	int userinput;
+
+	cout << "Which player?" << endl;
+	team.printTeamPlayers();
+
+	cout << endl;
+
+	cin >> userinput;
+
+	team.getPlayerUpdate(userinput);
+
+	cout << endl;
+}
+
+void addPlayer(EsportsTeam& team) {
+
+	team.addPlayer();
 }

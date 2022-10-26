@@ -11,12 +11,17 @@ class EsportsTeam {
 
 private:
 	vector<EsportsPlayer> Teams;
+	string teamName;
 
 public:
 	void addPlayer(EsportsPlayer playerteam);
 	void printTeam();
 	void printTeamPlayers();
+	void addPlayer();
+	void getPlayerUpdate(int userinput);
+	void outputTeam(ofstream& outputFile);
 	EsportsPlayer getSpecificPlayer(int userinput3);
+	EsportsTeam(string teamName);
 };
 
 #endif
