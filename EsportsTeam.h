@@ -10,7 +10,7 @@ using namespace std;
 class EsportsTeam {
 
 private:
-	vector<EsportsPlayer> Teams;
+	vector<EsportsPlayer> Teams; //players on a team
 	string teamName;
 
 public:
@@ -21,7 +21,7 @@ public:
 	void getPlayerUpdate(int userinput);
 	void outputTeam(ofstream& outputFile);
 	EsportsPlayer getSpecificPlayer(int userinput3);
-	EsportsTeam(string teamName);
+	EsportsTeam(string teamName); //constructor
 };
 
 #endif

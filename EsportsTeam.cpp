@@ -3,13 +3,13 @@ using namespace std;
 
 
 
-void EsportsTeam::addPlayer(EsportsPlayer playerteam) {
+void EsportsTeam::addPlayer(EsportsPlayer playerteam) {   //function to add players to Teams vector
 
 	Teams.push_back(playerteam);
 
 }
 
-void EsportsTeam::printTeam() {
+void EsportsTeam::printTeam() {              //function to print entire team
 
 	for (int i = 0; i < Teams.size(); i++) {
 
@@ -18,8 +18,8 @@ void EsportsTeam::printTeam() {
 	}
 
 }
-
-void EsportsTeam::outputTeam(ofstream& outputFile) {
+                          
+void EsportsTeam::outputTeam(ofstream& outputFile) {       //function to output to a file
 
 	for (int i = 0; i < Teams.size(); i++) {
 
@@ -29,7 +29,7 @@ void EsportsTeam::outputTeam(ofstream& outputFile) {
 
 }
 
-void EsportsTeam::printTeamPlayers() {
+void EsportsTeam::printTeamPlayers() {             //function to print the names of players preceded by a number
 
 	for (int i = 0; i < Teams.size(); i++) {
 
@@ -38,24 +38,24 @@ void EsportsTeam::printTeamPlayers() {
 
 }
 
-EsportsPlayer EsportsTeam::getSpecificPlayer(int userinput3) {
+EsportsPlayer EsportsTeam::getSpecificPlayer(int userinput3) {   //function to return a specific player
 
 	return Teams.at(userinput3 - 1);
 }
 
-void EsportsTeam::getPlayerUpdate(int userinput) {
+void EsportsTeam::getPlayerUpdate(int userinput) {   //function to update a player
 
 	Teams.at(userinput - 1).updatePlayer();
 
 }
 
-EsportsTeam::EsportsTeam(string teamName) {
+EsportsTeam::EsportsTeam(string teamName) {  //constructor
 
 	this->teamName = teamName;
 
 }
 
-void EsportsTeam::addPlayer() {
+void EsportsTeam::addPlayer() {   //function to add player
 	
 	string name;
 	int kills;

@@ -14,7 +14,7 @@ private:
 	char rating;
 	
 public:
-	EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating);
+	EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating); //constructor
 	string getName();
 	string getTeamName();
 	int getKills();

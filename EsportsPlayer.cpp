@@ -2,7 +2,7 @@
 
 using namespace std;
 
-EsportsPlayer::EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating) {
+EsportsPlayer::EsportsPlayer(string name, string teamName, int kills, int deaths, double headshotPercentage, double killDeathRatio, char rating) {  //constructor
 	this->name = name;
 	this->teamName = teamName;
 	this->kills = kills;
@@ -12,47 +12,49 @@ EsportsPlayer::EsportsPlayer(string name, string teamName, int kills, int deaths
 	this->rating = rating;
 }
 
-string EsportsPlayer::getName() {
+string EsportsPlayer::getName() {  //function to return name
 	return name;
 }
 
-string EsportsPlayer::getTeamName() {
+string EsportsPlayer::getTeamName() { //function to return team name
 	return teamName;
 }
 
-int EsportsPlayer::getKills() {
+int EsportsPlayer::getKills() {  //function to return kills
 	return kills;
 }
 
-int EsportsPlayer::getDeaths() {
+int EsportsPlayer::getDeaths() { //function to return deaths
 	return deaths;
 }
 
-double EsportsPlayer::getHeadshotPercentage() {
+double EsportsPlayer::getHeadshotPercentage() { //function to return headshot percentage
 	return headshotPercentage;
 }
 
-double EsportsPlayer::getKillDeathRatio() {
+double EsportsPlayer::getKillDeathRatio() { //function to return k/d ratio
 	return killDeathRatio;
 }
 
-char EsportsPlayer::getRating() {
+char EsportsPlayer::getRating() { //function to return rating
 	return rating;
 }
 
-void EsportsPlayer::printPlayer() {
+void EsportsPlayer::printPlayer() { //function to print a player
 
 	cout << name << " " << teamName << " " << kills << " " << deaths << " " << headshotPercentage << " " << killDeathRatio << " " << rating << endl;
 
 }
 
-void EsportsPlayer::outputPlayer(ofstream& outputFile) {
+void EsportsPlayer::outputPlayer(ofstream& outputFile) {  //function to export a player to a file
 
 	outputFile << name << " " << teamName << " " << kills << " " << deaths << " " << headshotPercentage << " " << killDeathRatio << " " << rating << endl;
 
+	cout << "Data exported to Newplayers.txt" << endl;
+
 }
 
-void EsportsPlayer::updatePlayer() {
+void EsportsPlayer::updatePlayer() {  //function to update a player
 	
 	int userinput;
 
@@ -76,6 +78,11 @@ void EsportsPlayer::updatePlayer() {
 		cout << "Enter new kills" << endl;
 		cin >> newkills;
 
+		while (newkills < 0) {
+			cout << "Please enter a positive integer" << endl;
+			cin >> newkills;
+		}
+
 		cout << endl;
 
 		kills = newkills;
@@ -89,6 +96,11 @@ void EsportsPlayer::updatePlayer() {
 
 		cout << "Enter new deaths" << endl;
 		cin >> newdeaths;
+
+		while (newdeaths < 0) {
+			cout << "Please enter a positive integer" << endl;
+			cin >> newdeaths;
+		}
 
 		cout << endl;
 
@@ -124,6 +136,11 @@ void EsportsPlayer::updatePlayer() {
 		cout << "Enter new K/D Ratio" << endl;
 		cin >> newKD;
 
+		while (newKD < 0.0 || newKD > 5.0) {
+			cout << "Please enter a decimal" << endl;
+			cin >> newKD;
+		}
+
 		cout << endl;
 
 		killDeathRatio = newKD;
@@ -137,6 +154,11 @@ void EsportsPlayer::updatePlayer() {
 
 		cout << "Enter new rating" << endl;
 		cin >> newrating;
+
+		while (newrating != 'A' && newrating != 'B' && newrating != 'C' && newrating != 'D' && newrating != 'F') {
+			cout << "Please enter A B C D or F" << endl;
+			cin >> newrating;
+		}
 
 		cout << endl;
 

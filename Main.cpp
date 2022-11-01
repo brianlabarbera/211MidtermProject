@@ -7,9 +7,9 @@ void updatePlayer(EsportsTeam& team);
 void addPlayer(EsportsTeam& team);
 
 int main() {
-
-	vector<EsportsPlayer> players;
-	EsportsTeam FaZe("FaZe");
+	 
+	vector<EsportsPlayer> players;      //where players are stored
+	EsportsTeam FaZe("FaZe"); 
 	EsportsTeam Cloud9("Cloud9");
 
 	ifstream playerFile("Players.txt");
@@ -20,16 +20,16 @@ int main() {
 	double tempHeadshotPercentage, tempKillDeathRatio;
 	char tempRating;
 	
-	while (playerFile >> tempName >> tempTeamName >> tempKills >> tempDeaths >> tempHeadshotPercentage >> tempKillDeathRatio >> tempRating) {
+	while (playerFile >> tempName >> tempTeamName >> tempKills >> tempDeaths >> tempHeadshotPercentage >> tempKillDeathRatio >> tempRating) {     //data from file being added to players vector
 
 		EsportsPlayer player(tempName, tempTeamName, tempKills, tempDeaths, tempHeadshotPercentage, tempKillDeathRatio, tempRating);
 
-		players.push_back(player);
+		players.push_back(player); 
 	}
 
 	playerFile.close();
 
-	for (int i = 0; i < players.size(); i++) {
+	for (int i = 0; i < players.size(); i++) {  //organizing players into teams
 
 		if (players.at(i).getTeamName() == "FaZe") {
 
@@ -42,7 +42,7 @@ int main() {
 		}
 
 	}
-	do {
+	do {                                                                //start of menu
 		cout << "Enter the number for what you'd like to do:" << endl;
 		cout << "1. View all players" << endl;
 		cout << "2. View a player" << endl;
@@ -50,7 +50,7 @@ int main() {
 		cout << "4. Update a player" << endl;
 		cout << "5. Add a player" << endl;
 		cout << "6. Export data to file" << endl;
-		cout << "Enter any other button to end the program." << endl;
+		cout << "Enter any other keys to end the program." << endl;
 
 		cout << endl;
 
@@ -81,14 +81,23 @@ int main() {
 
 			cout << endl;
 
-			if (userinput2 == 1) {
-				viewPlayer(FaZe);
+
+			while (userinput2 != 2 && userinput2 != 1) {
+				cin.clear();
+				cin.ignore(10, '\n');
+				cout << "Please Enter 1. or 2." << endl;
+				cin >> userinput2;
+				cout << endl;
 			}
 
-			else if (userinput2 == 2) {
-				viewPlayer(Cloud9);
-			}
+				if (userinput2 == 1) {
+					viewPlayer(FaZe);
+				}
 
+				else if (userinput2 == 2) {
+					viewPlayer(Cloud9);
+				}
+			
 			break;
 		
 		case 3:
@@ -103,6 +112,14 @@ int main() {
 			
 			cout << endl;
 
+			while (userinput4 != 2 && userinput4 != 1) {
+				cin.clear();
+				cin.ignore(10, '\n');
+				cout << "Please Enter 1. or 2." << endl;
+				cin >> userinput4;
+				cout << endl;
+			}
+
 			if (userinput4 == 1) {
 				FaZe.printTeam();
 				cout << endl;
@@ -112,7 +129,6 @@ int main() {
 				Cloud9.printTeam();
 				cout << endl;
 			}
-
 			break;
 
 		case 4:
@@ -126,6 +142,14 @@ int main() {
 			cin >> userinput5;
 
 			cout << endl;
+
+			while (userinput5 != 2 && userinput5 != 1) {
+				cin.clear();
+				cin.ignore(10, '\n');
+				cout << "Please Enter 1. or 2." << endl;
+				cin >> userinput5;
+				cout << endl;
+			}
 
 			if (userinput5 == 1) {
 				updatePlayer(FaZe);
@@ -149,6 +173,14 @@ int main() {
 
 			cout << endl;
 
+			while (userinput6 != 2 && userinput6 != 1) {
+				cin.clear();
+				cin.ignore(10, '\n');
+				cout << "Please Enter 1. or 2." << endl;
+				cin >> userinput6;
+				cout << endl;
+			}
+
 			if (userinput6 == 1) {
 				addPlayer(FaZe);
 			}
@@ -165,13 +197,13 @@ int main() {
 			
 		}
 
-	}  while (userinput > 0);
+	}  while (userinput > 0 && userinput < 7);
 
 	
 	return 0;
 }
 
-void viewPlayer(EsportsTeam team) {
+void viewPlayer(EsportsTeam team) {   //function to view a specific player
 
 	int userinput3;
 
@@ -182,12 +214,14 @@ void viewPlayer(EsportsTeam team) {
 
 	cin >> userinput3;
 
+	cout << endl;
+
 	team.getSpecificPlayer(userinput3).printPlayer();
 
 	cout << endl;
 }
 
-void updatePlayer(EsportsTeam& team) {
+void updatePlayer(EsportsTeam& team) {  //function to update a specific player
 
 	int userinput;
 
@@ -203,7 +237,7 @@ void updatePlayer(EsportsTeam& team) {
 	cout << endl;
 }
 
-void addPlayer(EsportsTeam& team) {
+void addPlayer(EsportsTeam& team) {  //function to add a player
 
 	team.addPlayer();
 }
